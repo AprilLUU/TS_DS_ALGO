@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/node": "^20.14.9",
+    "hy-algokit": "^1.4.0"
+  }
+}
