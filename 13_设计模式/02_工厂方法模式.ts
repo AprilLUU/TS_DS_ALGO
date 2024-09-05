@@ -19,6 +19,7 @@ class FactoryB extends AbstractFactory {
 
 const factoryA = new FactoryA()
 factoryA.createProduct()
+const factoryB = new FactoryB()
+factoryB.createProduct()
 
 export {}
-
