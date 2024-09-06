@@ -35,7 +35,7 @@ class BSTree<T> {
 
   private preOrder(root: TreeNode<T> | null) {
     if (root) {
-      console.log(root.value, root.parent?.value)
+      console.log(root.value)
       this.preOrder(root.left)
       this.preOrder(root.right)
     }
@@ -77,6 +77,7 @@ class BSTree<T> {
     let current = this.root
 
     // 栈不为空说明有结点未访问
+    // current判断第一次可以进入循环
     while (current || stack.length !== 0) {
       // 找到最先访问的左子树结点
       while (current) {
