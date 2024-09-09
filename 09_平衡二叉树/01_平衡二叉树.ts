@@ -1,5 +1,5 @@
 import { AVLTreeNode, TreeNode } from "../types/Node"
-import BSTree from "../05_二叉搜索树/01_二叉搜索树"
+import BSTree from "../05_二叉树/01_二叉搜索树"
 
 class AVLTree<T> extends BSTree<T> {
   protected createNode(value: T): TreeNode<T> {

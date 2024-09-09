@@ -38,3 +38,5 @@ const contextC = new Context(new ConcreteStrategyC())
 contextA.algo()
 contextB.algo()
 contextC.algo()
+
+export {}
