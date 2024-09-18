@@ -20,3 +20,5 @@ function jump(nums: number[]): number {
 
 const nums = [2, 3, 1]
 console.log(jump(nums))
+
+export {}
