@@ -23,7 +23,6 @@ function uniquePathsV1(m: number, n: number): number {
   // 初始化为上一行的值 相当于加上了从上面下来的路径数 此时只需要加上左边过来的路径数即可
   for (let i = 1; i < m; i++) {
     for (let j = 1; j < n; j++) {
-      j
       dp[j] += dp[j - 1]
     }
   }

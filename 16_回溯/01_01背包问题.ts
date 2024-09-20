@@ -1,6 +1,6 @@
 function bag01(weight: number[], value: number[], capacity: number) {
   let res = 0
-  let count = 0
+  // let count = 0
 
   function backtracking(currCapacity: number, currValue: number, index: number) {
     // console.log(++count)
