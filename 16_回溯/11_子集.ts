@@ -20,3 +20,5 @@ function subsets(nums: number[]): number[][] {
 
 const nums = [1, 2, 3]
 console.log(subsets(nums))
+
+export {}

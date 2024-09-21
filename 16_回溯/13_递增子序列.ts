@@ -17,9 +17,8 @@ function findSubsequences(nums: number[]): number[][] {
       backtracking(i + 1)
       subset.pop()
     }
-
   }
-  
+
   backtracking(0)
 
   return res
@@ -44,14 +43,24 @@ function findSubsequencesV2(nums: number[]): number[][] {
       backtracking(i + 1)
       subset.pop()
     }
-
   }
-  
+
   backtracking(0)
 
   return res
 }
 
+/**
+ * [4, 4] [4, 4, 4] [4, 4, 4, 4], [1, 4]
+ * []
+ * [4]
+ * [4, 4]
+ * [4, 4, 4] [4, 4, 1]
+ * [4, 4, 4, 1] [4, 4, 4, 4] [4, 4, 1, 4]
+ * [4, 4, 4, 1, 4]
+ */
+const nums1 = [4, 4, 4, 1, 4]
+console.log(findSubsequences(nums1))
 const nums = [4, 6, 7, 7]
 console.log(findSubsequences(nums))
 
