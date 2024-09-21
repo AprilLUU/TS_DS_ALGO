@@ -20,7 +20,7 @@ class Graph<T> {
   }
 
   print() {
-    this.vertices.forEach(vertex => {
+    this.vertices.forEach((vertex) => {
       console.log(`${vertex} -> ${this.adjList.get(vertex)?.join(" ")}`)
     })
   }
