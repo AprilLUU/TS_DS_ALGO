@@ -23,6 +23,9 @@ function subsetsWithDup(nums: number[]): number[][] {
 function subsetsWithDupV1(nums: number[]): number[][] {
   const res: number[][] = []
   const subset: number[] = []
+  // 需不需要排序取决于下一层能不能选取重复的元素
+  // 排完序之后可保证本层以及之后的层都不会选取重复的元素
+  // 从而达到去重的效果
   nums.sort((a, b) => a - b)
 
   const backtracking = (index: number) => {
