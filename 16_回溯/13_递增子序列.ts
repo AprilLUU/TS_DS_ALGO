@@ -54,10 +54,14 @@ function findSubsequencesV2(nums: number[]): number[][] {
  * [4, 4] [4, 4, 4] [4, 4, 4, 4], [1, 4]
  * []
  * [4]
- * [4, 4]
- * [4, 4, 4] [4, 4, 1]
- * [4, 4, 4, 1] [4, 4, 4, 4] [4, 4, 1, 4]
- * [4, 4, 4, 1, 4]
+ * [4, 4] res.push
+ * [4, 4, 4] res.push
+ * [4, 4, 4, 1] continue [4, 4, 4, 4] res.push
+ * [4, 4, 1] continue [4, 4, 4] deduplicate
+ * [4, 4] deduplicate [4, 1] continue [4, 4] deduplicate
+ * [4] deduplicate [4] deduplicate [1]
+ * [1, 4] res.push
+ * [4] deduplicate
  */
 const nums1 = [4, 4, 4, 1, 4]
 console.log(findSubsequences(nums1))
