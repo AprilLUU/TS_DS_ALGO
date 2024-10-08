@@ -32,7 +32,7 @@ function minCameraCover(root: TreeNode | null): number {
     // 左右孩子有摄像头 此时该节点处于有覆盖状态
     if (left === 1 || right === 1) return 2
   }
-  // 回溯到根节点时仍处于无覆盖状态 需要在根节点防止摄像头
+  // 回溯到根节点时仍处于无覆盖状态 需要在根节点放置摄像头
   if (traverse(root) === 0) res++
   return res
 }
