@@ -1,6 +1,9 @@
 import ListNode from "./ListNode"
 
-const getIntersectionNode = function(headA: ListNode | null, headB: ListNode | null): ListNode | null {
+const getIntersectionNode = function (
+  headA: ListNode | null,
+  headB: ListNode | null
+): ListNode | null {
   if (!headA || !headB) return null
 
   let lenA = 0
