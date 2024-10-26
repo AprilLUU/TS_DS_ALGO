@@ -48,3 +48,51 @@ function reverseKGroup(head: ListNode | null, k: number): ListNode | null {
   // 返回反转后的头结点
   return tails[0]
 }
+
+function reverseKGroupV2(head: ListNode | null, k: number): ListNode | null {
+  if (!head || k === 1) return head
+
+  const reverseList = (head: ListNode, tail: ListNode) => {
+    let prev: ListNode | null = null
+    let curr: ListNode | null = head
+    const end = tail.next
+
+    while (curr && curr !== end) {
+      const next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+    }
+  }
+
+  let virtualHead = new ListNode()
+  virtualHead.next = head
+  let pre = virtualHead
+  let curr: ListNode | null = head
+
+  while (curr) {
+    let tail: ListNode | null = curr
+
+    for (let i = 1; i < k; i++) {
+      tail = tail.next
+      // 到达链尾 且剩余部分小于k 接上前面部分之后直接返回
+      if (!tail) {
+        pre.next = curr
+        return virtualHead.next
+      }
+    }
+
+    // 保存下一个开始结点
+    const next = tail.next
+    // 反转k个子结点
+    reverseList(curr, tail)
+    // 接上之前的链尾
+    pre.next = tail
+    // 保存当前链尾
+    pre = curr
+    // 进行下一组检查
+    curr = next
+  }
+
+  return virtualHead.next
+}
