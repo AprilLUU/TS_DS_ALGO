@@ -1,5 +1,5 @@
 function pivotIndex(nums: number[]): number {
-  const prefixSum: number[] = []
+  const prefixSum: number[] = new Array(nums.length).fill(0)
   prefixSum[0] = nums[0]
   for (let i = 1; i < nums.length; i++) {
     prefixSum[i] = prefixSum[i - 1] + nums[i]
