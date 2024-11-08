@@ -1,16 +1,16 @@
 function intersection(nums1: number[], nums2: number[]): number[] {
   const set = new Set<number>()
-  const resSet = new Set<number>()
+  const res = new Set<number>()
 
-  for (let i = 0; i < nums1.length; i++) {
-    set.add(nums1[i])
+  for (const num of nums1) {
+    if (!set.has(num)) set.add(num)
   }
 
-  for (let i = 0; i < nums2.length; i++) {
-    if (set.has(nums2[i])) resSet.add(nums2[i])
+  for (const num of nums2) {
+    if (set.has(num)) res.add(num)
   }
 
-  return Array.from(resSet)
+  return Array.from(res)
 }
 
 function intersectionV2(nums1: number[], nums2: number[]): number[] {
@@ -39,6 +39,8 @@ function intersectionV2(nums1: number[], nums2: number[]): number[] {
   return res
 }
 
-const nums1 = [1, 2, 2, 1], nums2 = [2, 2]
-console.log(intersectionV2(nums1, nums2))
+const nums1 = [1,2,2,1], nums2 = [2,2]
+console.log(intersection(nums1, nums2))
+const nums3 = [4,9,5], nums4 = [9,4,9,8,4]
 
+export {}
