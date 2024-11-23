@@ -1,5 +1,4 @@
 function countPrimes(n: number): number {
-
   const isPrime = (num: number): boolean => {
     // 检查[2, 根号num]范围内即可
     // num可分解为两个因数 只需检查较小数即可
@@ -17,3 +16,5 @@ function countPrimes(n: number): number {
 
   return res
 }
+
+console.log(countPrimes(1000000))
