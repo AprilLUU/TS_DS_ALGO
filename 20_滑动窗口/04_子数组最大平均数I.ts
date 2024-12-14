@@ -5,7 +5,7 @@ function findMaxAverage(nums: number[], k: number): number {
   for (let i = left; i < left + k; i++) sum += nums[i]
   let res = Number.MIN_SAFE_INTEGER
 
-  while (right < nums.length) {
+  while (right < nums.length - 1) {
     const average = sum / k
     res = Math.max(res, average)
     sum -= nums[left]

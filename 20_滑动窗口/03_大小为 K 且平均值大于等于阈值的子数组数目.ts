@@ -7,7 +7,7 @@ function numOfSubarrays(arr: number[], k: number, threshold: number): number {
   }
   let res = 0
 
-  while (right < arr.length) {
+  while (right < arr.length - 1) {
     // let sum = 0
     // for (let i = left; i < left + k; i++) {
     //   sum += arr[i]

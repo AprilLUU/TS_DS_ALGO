@@ -19,7 +19,7 @@ function maxSatisfied(
   let max = total - sum
   // 窗口开始索引
   let index = left
-  while (right < customers.length) {
+  while (right < customers.length - 1) {
     // 移动窗口
     total -= customers[left]
     if (grumpy[left] === 0) sum -= customers[left]
