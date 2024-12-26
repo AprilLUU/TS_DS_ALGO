@@ -28,3 +28,5 @@ const nums = [2, 1, 4, 3],
   left = 2,
   right = 3
 numSubarrayBoundedMax(nums, left, right)
+
+export {}

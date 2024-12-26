@@ -21,7 +21,7 @@ function numSubarrayProductLessThanK(nums: number[], k: number): number {
   for (let right = 0; right < nums.length; right++) {
     prod *= nums[right]
 
-    // 窗口扩大 找到合法的窗口左端点
+    // 窗口收缩 找到合法的窗口左端点
     while (left <= right && prod >= k) {
       prod /= nums[left]
       left++
@@ -40,3 +40,5 @@ function numSubarrayProductLessThanK(nums: number[], k: number): number {
 const nums = [10, 5, 2, 6],
   k = 100
 numSubarrayProductLessThanK(nums, k)
+
+export {}
