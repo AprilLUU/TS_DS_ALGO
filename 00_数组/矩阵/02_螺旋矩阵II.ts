@@ -54,6 +54,50 @@ function spiralOrder(matrix: number[][]): number[] {
   return res
 }
 
+function spiralOrderV1(matrix: number[][]): number[] {
+  const m = matrix.length
+  const n = matrix[0].length
+  let startx = 0
+  let starty = 0
+  let x = 0
+  let y = 0
+  let offset = 1
+  const res: number[] = []
+
+  // 中间仍有元素需要处理
+  while (startx < m - offset && starty < n - offset) {
+    // 上右下左 按左开右闭的原则处理
+    while (y < n - offset) res.push(matrix[x][y++])
+    while (x < m - offset) res.push(matrix[x++][y])
+    while (y > starty) res.push(matrix[x][y--])
+    while (x > startx) res.push(matrix[x--][y])
+    startx++
+    starty++
+    x = startx
+    y = starty
+    offset++
+  }
+
+  // n阶方阵且n为奇数 处理最后的中心元素
+  if (m === n && n % 2 === 1) res.push(matrix[x][y])
+  // m > n 处理中间剩下的一条竖边
+  if (m > n) {
+    // x <= m - offset && y === n - offset 中间仍剩下元素
+    while (x <= m - offset && y === n - offset) {
+      res.push(matrix[x++][y])
+    }
+  }
+  // m < n 处理中间剩下的一条横边
+  if (m < n) {
+    // x === m - offset && y <= n - offset 中间仍剩下元素
+    while (y <= n - offset && x === m - offset) {
+      res.push(matrix[x][y++])
+    }
+  }
+
+  return res
+}
+
 const matrix = [
   [1, 2, 3],
   [4, 5, 6],
