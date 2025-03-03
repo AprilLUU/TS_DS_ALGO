@@ -4,7 +4,7 @@ import TreeNode from "./type"
  * 搜索以每个节点作为根节点的所有路径
  * 两次遍历即可
  */
-function pathSum(root: TreeNode | null, targetSum: number): number {
+function pathSumV1(root: TreeNode | null, targetSum: number): number {
   let res = 0
   let pathSum = 0
 
@@ -49,5 +49,39 @@ function pathSum(root: TreeNode | null, targetSum: number): number {
 
   return res
 }
+
+/**
+ * 前缀和
+ * 哈希表存储路径的前缀和
+ */
+function pathSum(root: TreeNode | null, targetSum: number): number {
+  let res = 0
+  const map = new Map<number, number>()
+  map.set(0, 1)
+
+  const dfs = (node: TreeNode | null, pre: number) => {
+    if (!node) return
+
+    pre += node.val
+    if (map.has(pre - targetSum)) {
+      res += map.get(pre - targetSum)!
+    }
+    map.set(pre, (map.get(pre) ?? 0) + 1)
+    dfs(node.left, pre)
+    dfs(node.right, pre)
+    // map.delete(pre)
+    // 回溯到上一层结点时，清除当前路径存储的前缀和
+    map.set(pre, map.get(pre)! - 1)
+  }
+
+  dfs(root, 0)
+
+  return res
+}
+
+const root = new TreeNode(0)
+root.left = new TreeNode(1)
+root.right = new TreeNode(1)
+pathSum(root, 1)
 
 export {}
