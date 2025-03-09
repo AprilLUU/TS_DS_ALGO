@@ -5,7 +5,6 @@ const bubbleSort = <T = number>(arr: T[]): T[] => {
   if (!isNeedSort(arr)) return arr
 
   for (let i = 1; i < arr.length; i++) {
-
     let isSwap = false
 
     for (let j = 0; j < arr.length - i; j++) {

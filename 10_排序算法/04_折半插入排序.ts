@@ -18,7 +18,6 @@ function binaryInsertSort(arr: number[]) {
   if (arr.length === 0 || arr.length === 1) return arr
 
   for (let i = 1; i < arr.length; i++) {
-
     if (arr[i] < arr[i - 1]) {
       const temp = arr[i]
       let left = 0
@@ -36,7 +35,6 @@ function binaryInsertSort(arr: number[]) {
 
       arr[right + 1] = temp
     }
-
   }
 
   return arr

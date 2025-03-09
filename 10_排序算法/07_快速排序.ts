@@ -14,7 +14,7 @@ const quickSort = <T = number>(arr: T[]): T[] => {
     let i = left
     // 跳过基准元素的扫描
     let j = right - 1
-    
+
     // 找到位置的条件是i > j 此时 j + 1 = i i为插入位置
     // 相等时需要继续循环 因为此时i,j指向元素仍未扫描,还未找到基准元素的最终位置
     while (i <= j) {
@@ -36,7 +36,7 @@ const quickSort = <T = number>(arr: T[]): T[] => {
     partition(left, i - 1)
     partition(i + 1, right)
   }
-  
+
   partition(0, arr.length - 1)
   return arr
 }

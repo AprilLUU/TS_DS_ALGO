@@ -1,7 +1,6 @@
 import { testSort, measureSort } from "hy-algokit"
 import { isNeedSort } from "./utils"
 
-
 const mergeSort = <T = number>(arr: T[]): T[] => {
   if (!isNeedSort(arr)) return arr
 
@@ -20,30 +19,31 @@ const mergeSort = <T = number>(arr: T[]): T[] => {
 }
 
 const merge = <T>(leftArr: T[], rightArr: T[]) => {
-    const newArr: T[] = []
-    let i = 0, j = 0
+  const newArr: T[] = []
+  let i = 0,
+    j = 0
 
-    while (i < leftArr.length && j < rightArr.length) {
-      if (leftArr[i] <= rightArr[j]) {
-        newArr.push(leftArr[i])
-        i++
-      } else {
-        newArr.push(rightArr[j])
-        j++
-      }
-    }
-
-    while (i < leftArr.length) {
+  while (i < leftArr.length && j < rightArr.length) {
+    if (leftArr[i] <= rightArr[j]) {
       newArr.push(leftArr[i])
       i++
-    }
-
-    while (j < rightArr.length) {
+    } else {
       newArr.push(rightArr[j])
       j++
     }
+  }
 
-    return newArr
+  while (i < leftArr.length) {
+    newArr.push(leftArr[i])
+    i++
+  }
+
+  while (j < rightArr.length) {
+    newArr.push(rightArr[j])
+    j++
+  }
+
+  return newArr
 }
 
 testSort(mergeSort)

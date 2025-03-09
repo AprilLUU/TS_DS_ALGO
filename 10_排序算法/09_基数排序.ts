@@ -19,7 +19,6 @@ const radixSort = (arr: number[]): number[] => {
   const max = maxLength(arr as number[])
   let newArr = T2otherT(arr as number[], "string") as string[]
   for (let i = 1; i <= max; i++) {
-
     // 分配到队列中 O(d(n + r)) d为位数 r为进制数
     for (let j = 0; j < newArr.length; j++) {
       switch (newArr[j][max - i]) {
@@ -59,7 +58,7 @@ const radixSort = (arr: number[]): number[] => {
     newArr = []
 
     // 从队列中收集元素
-    //#region 
+    //#region
     while (!zeroQueue.isEmpty()) {
       newArr.push(zeroQueue.dequeue()!)
     }
